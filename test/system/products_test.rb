@@ -45,3 +45,4 @@ class ProductsTest < ApplicationSystemTestCase
     assert_text "Product was successfully destroyed"
   end
 end
+

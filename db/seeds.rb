@@ -31,6 +31,3 @@ Product.create!(title: 'Alice no país das maravilhas',
   image_url: 'alice.jpg',
   price: 10.34)
 
-
-
-
