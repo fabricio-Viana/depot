@@ -3,12 +3,23 @@
 one:
   title: MyString
   description: MyText
-  image_url: MyString
+  image_url: lorem.jpg
   price: 9.99
 
 two:
   title: MyString
   description: MyText
-  image_url: MyString
+  image_url: lorem.jpg
   price: 9.99
   
+ruby: 
+  title:       Ruby. Aprenda a Programar na Linguagem Mais Divertida 
+  description: 
+    O mercado das linguagens de programação está 
+    cada vez mais pulverizado e as linguagens, que antes eram mainstream,
+    hoje dividem a atenção dos desenvolvedores com outras alternativas.
+    Uma delas é o Ruby, poderosa linguagem criada para satisfazer o desejo 
+    de possibilitar a criação de código bonito e elegante. Muitos desenvolvedores 
+    já a adotaram e recomendam. Agora é a sua vez! Comece a aprender desde já!
+  price:       49.90
+  image_url:   ruby.jpg 
