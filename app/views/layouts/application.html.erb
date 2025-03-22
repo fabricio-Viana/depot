@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Depot</title>
+    <title> Mundo Literário </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
-
+   
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
+    <header class="bg-green-100  shadow-md  ">
+      <%= image_tag 'logo.png', alt: 'Mundo Literario' %>
+      <h1><%= @page_title %></h1>
+    </header>
+
+    <section class="flex">
+      <nav class="bg-green-100 p-6 shadow-green-900 shadow-xl ">
+        <ul class="text-black-300 leading-8">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/questions">Questões</a></li>
+          <li><a href="/news">Novidades</a></li>
+          <li><a href="/contact">Contato</a></li>
+        </ul>
+      </nav>
+
+      <main class="container mx-auto mt-4 px-5 flex">
+        <%= yield %>
+      </main>
+    </section>
   </body>
 </html>
