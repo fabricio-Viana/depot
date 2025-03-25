@@ -29,7 +29,7 @@ class LineItemsController < ApplicationController
     respond_to do |format|
       if @line_item.save
         format.html { redirect_to cart_url(@line_item.cart),
-          notice: "Line item was successfully created." }
+          notice: "Lista de itens foi criada." }
         format.json { render :show,
           status: :created, location: @line_item }
       else
