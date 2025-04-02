@@ -1,19 +1,8 @@
 <div id="<%= dom_id cart %>">
-  <h2 class="font-bold text-lg mb-3">Your Cart</h2>
+  <h2 class="font-bold text-lg mb-3">Seu carrinho</h2>
 
   <table class="table-auto">
-    <% cart.line_items.each do |line_item| %>
-      <tr>
-        <td class="text-right"><%= line_item.quantity %></td>
-        <td>&times;</td>
-        <td class="pr-2">
-          <%= line_item.product.title %>
-        </td>
-        <td class="text-right font-bold">
-          <%= number_to_currency(line_item.total_price).gsub("$","R$ ").gsub(".",",") %>
-        </td>
-      </tr>
-    <% end %>
+    <%= render cart.line_items %>
 
     <tfoot>
       <tr>
