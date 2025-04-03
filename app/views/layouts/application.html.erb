@@ -18,6 +18,7 @@
 
     <section class="flex">
       <nav class="bg-green-100 p-6  shadow-xl  flex flex-col justify-between ">
+        <%= render partial: 'layouts/cart', locals: {cart: @cart } %>
         <ul class="text-black-300 leading-8">
           <li><a href="/">Inicio</a></li>
           <li><a href="/questions">Questões</a></li>

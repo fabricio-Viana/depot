@@ -1,0 +1,15 @@
+@keyframes line-item-highlight {
+  0% {
+    background: #dcfce7;
+  }
+  50% {
+    background: #bdf7d1;
+  }
+  100% {
+    background: none;
+  }
+}
+
+.line-item-highlight {
+  animation: line-item-highlight 1s ease-in-out;
+}
