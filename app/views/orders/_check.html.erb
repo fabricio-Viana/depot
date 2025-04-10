@@ -1,0 +1,11 @@
+<fieldset data-payment-target="additionalFields" data-type="Cheque">
+  <div class="my-5">
+    <%= form.label :routing_number, "Número de roteamento bancário" %>
+    <%= form.text_field :routing_number, class: "input-field" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :account_number , "Número da conta"%>
+    <%= form.password_field :account_number, class: "input-field" %>
+  </div>
+</fieldset>

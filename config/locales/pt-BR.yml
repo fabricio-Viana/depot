@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      order: "Pedido"
+    attributes:
+      order:
+        name: "Nome"
+        address: "Endereço"
+        email: "E-mail"
+        pay_type: "Forma de pagamento"
+  
