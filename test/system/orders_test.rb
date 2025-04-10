@@ -1,47 +1,41 @@
 require "application_system_test_case"
 
 class OrdersTest < ApplicationSystemTestCase
-  setup do
-    @order = orders(:one)
-  end
+  test "check dynamic fields" do
+    visit store_index_url
 
-  test "visiting the index" do
-    visit orders_url
-    assert_selector "h1", text: "Orders"
-  end
+    click_on 'Adicionar ao Carrinho', match: :first
 
-  test "should create order" do
-    visit orders_url
-    click_on "New order"
+    click_on 'Finalizar'
 
-    fill_in "Pay type", with: @order. pay_type
-    fill_in "Address", with: @order.address
-    fill_in "Email", with: @order.email
-    fill_in "Name", with: @order.name
-    click_on "Create Order"
+    assert has_no_field? 'Número de roteamento bancário'
+    assert has_no_field? 'Número da conta'
+    assert has_no_field? 'Número do cartão de crédito'
+    assert has_no_field? 'Data de validade'
+    assert has_no_field? 'Número do pedido de compra'
 
-    assert_text "Order was successfully created"
-    click_on "Back"
-  end
+    select 'Cheque', from: 'Forma de pagamento'
 
-  test "should update Order" do
-    visit order_url(@order)
-    click_on "Edit this order", match: :first
+    assert has_field? 'Número de roteamento bancário'
+    assert has_field? 'Número da conta'
+    assert has_no_field? 'Número do cartão de crédito'
+    assert has_no_field? 'Data de validade'
+    assert has_no_field? 'Número do pedido de compra'
 
-    fill_in "Pay type", with: @order. pay_type
-    fill_in "Address", with: @order.address
-    fill_in "Email", with: @order.email
-    fill_in "Name", with: @order.name
-    click_on "Update Order"
+    select 'Cartão de Credito', from: 'Forma de pagamento'
 
-    assert_text "Order was successfully updated"
-    click_on "Back"
-  end
+    assert has_no_field? 'Número de roteamento bancário'
+    assert has_no_field? 'Número da conta'
+    assert has_field? 'Número do cartão de crédito'
+    assert has_field? 'Data de validade'
+    assert has_no_field? 'Número do pedido de compra'
 
-  test "should destroy Order" do
-    visit order_url(@order)
-    accept_confirm { click_on "Destroy this order", match: :first }
+    select 'Pedido de compra', from: 'Forma de pagamento'
 
-    assert_text "Order was successfully destroyed"
+    assert has_no_field? 'Número de roteamento bancário'
+    assert has_no_field? 'Número da conta'
+    assert has_no_field? 'Número do cartão de crédito'
+    assert has_no_field? 'Data de validade'
+    assert has_field? 'Número do pedido de compra'
   end
 end
